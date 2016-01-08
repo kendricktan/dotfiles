@@ -231,7 +231,7 @@ bar {
 }
 
 # Wallpaper
-exec feh --bg-scale ~/Pictures/wg/1445473203029.png
+exec feh --bg-scale ~/Pictures/Wallpapers/1451079171848.jpg
 
 # Media keys
 exec xbindkeys
@@ -242,3 +242,6 @@ exec xinput --set-prop "14" "libinput Accel Speed" 1
 # Trackpad point speet and scrolling
 exec xinput --set-prop "13" "libinput Accel Speed" 1
 exec xinput --set-prop 13 "libinput Natural Scrolling Enabled" 1
+
+# Gnome settings
+exec gnome-settings-daemon
