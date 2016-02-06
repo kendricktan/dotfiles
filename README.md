@@ -1,6 +1,6 @@
 # Dotfiles
 ### Custom config files for my system
 
-![screenfetch](http://imgur.com/fyq6NBx)
-![clean](http://imgur.com/u4hTuF8)
-![wallpaper](http://imgur.com/PSgfQvl)
+![screenfetch](http://i.imgur.com/fyq6NBx.png)
+![clean](http://i.imgur.com/u4hTuF8.png)
+![wallpaper](http://i.imgur.com/PSgfQvl.png)
