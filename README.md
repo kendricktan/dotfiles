@@ -1,7 +1,6 @@
 # Dotfiles
+### Custom config files for my system
 
-OS: Fedora
-
-WM: i3gaps
-
-Terminal: gnome-terminal (might change to zsh soon...)
+![screenfetch](http://imgur.com/fyq6NBx)
+![clean](http://imgur.com/u4hTuF8)
+![wallpaper](http://imgur.com/PSgfQvl)

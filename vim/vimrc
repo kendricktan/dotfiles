@@ -71,7 +71,7 @@ endif
 NeoBundle 'honza/vim-snippets'
 
 "" Color
-NeoBundle 'tomasr/molokai'
+"" NeoBundle 'tomasr/molokai'
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -197,7 +197,7 @@ let no_buffers_menu=1
 set mousemodel=popup
 set t_Co=256
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=254 ctermfg=NONE
+hi CursorLine   cterm=NONE ctermbg=52 ctermfg=NONE
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
