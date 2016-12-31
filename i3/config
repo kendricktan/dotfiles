@@ -33,7 +33,7 @@ font pango:hack 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal #i3-sensible-terminal
+bindsym $mod+Return exec terminology #i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -48,10 +48,10 @@ bindsym $mod+d exec dmenu_run -p 'run: ' -fn 'hack:normal:pixelsize=11' -nb '#6c
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -72,7 +72,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -141,10 +141,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -157,50 +157,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-
-# Gaps
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-
-}
-
 bindsym $mod+r mode "resize"
-
 
 # window colors
 #                           border background text indicator
@@ -212,26 +169,25 @@ client.urgent               #bf616a #bf616a #ee0000 #bf616a
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	height 15
 
-	colors {
-		background #343d46
-		statusline #eff1f5
-		separator #f7ca18
-		focused_workspace #a3be8c #65737e #eff1f5
-		active_workspace #4f5b66 #5f676a #eff1f5
-		inactive_workspace #4f5b66 #4f5b66 #a7adba
-		urgent_workspace #bf616a #65737e #eff1f5
-	}
+    colors {
+        background #343d46
+        statusline #eff1f5
+        separator #f7ca18
+        focused_workspace #a3be8c #65737e #eff1f5
+        active_workspace #4f5b66 #5f676a #eff1f5
+        inactive_workspace #4f5b66 #4f5b66 #a7adba
+        urgent_workspace #bf616a #65737e #eff1f5
+    }
 
-	# i3bar position
+    # i3bar position
     position top
     # Using custom i3status.conf
     status_command i3status -c ~/.i3/i3status.conf
 }
 
 # Wallpaper
-exec feh --bg-scale ~/Pictures/Wallpapers/1451079171848.jpg
+exec feh --bg-scale ~/Pictures/Wallpapers/biscat.jpg
 
 # Media keys
 exec xbindkeys
