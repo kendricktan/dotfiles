@@ -201,3 +201,6 @@ exec xinput --set-prop 13 "libinput Natural Scrolling Enabled" 1
 
 # Gnome settings
 exec gnome-settings-daemon
+
+# SSH Keyring agents
+exec gnome-keyring-daemon --start
