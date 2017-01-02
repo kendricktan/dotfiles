@@ -193,11 +193,12 @@ exec feh --bg-scale ~/Pictures/Wallpapers/biscat.jpg
 exec xbindkeys
 
 # Trackpoint speed
-exec xinput --set-prop "14" "libinput Accel Speed" 1
+exec xinput --set-prop "12" "libinput Accel Speed" 1
 
 # Trackpad point speet and scrolling
 exec xinput --set-prop "13" "libinput Accel Speed" 1
-exec xinput --set-prop 13 "libinput Natural Scrolling Enabled" 1
+exec xinput --set-prop 12 "libinput Natural Scrolling Enabled" 1
 
 # Gnome settings
+exec ssh-agent -s
 exec gnome-keyring-daemon --start --components=secrets,ssh
