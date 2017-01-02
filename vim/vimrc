@@ -5,6 +5,8 @@ set nocompatible               " Be iMproved
 
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:vim_bootstrap_langs = "c,haskell,javascript,python"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
 
@@ -23,6 +25,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
