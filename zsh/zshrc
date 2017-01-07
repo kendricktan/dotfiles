@@ -98,9 +98,9 @@ export PATH=${CUDA_HOME}/bin:${PATH}
 
 # SSH Keyagent
 if [ "$0" = "/etc/gdm/Xsession" -a "$DESKTOP_SESSION" = "i3" ]; then
-    export $(ssh-agent -s)
-    export $(gnome-keyring-daemon --start)
     # SSH_AGENT_PID required to stop xinitrc-common from starting ssh-agent
-    export SSH_AGENT_PID=${GNOME_KEYRING_PID:-gnome}
+    export $(ssh-agent -s)
+    export $(gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
     export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+    export SSH_AGENT_PID=${GNOME_KEYRING_PID:-gnome}
 fi
