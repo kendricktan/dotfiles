@@ -12,6 +12,7 @@
 # 0 Window border
 for_window [class="^.*"] border pixel 0
 
+# Windows key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -33,13 +34,13 @@ font pango:hack 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminology #i3-sensible-terminal
+bindsym $mod+Return exec terminology 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -p 'run: ' -fn 'hack:normal:pixelsize=11' -nb '#6c7a89' -nf '#eeeeee' -sb '#eeeeee' -sf '#6c7a89'
+bindsym $mod+d exec dmenu_run -p 'run: ' -fn 'hack:normal:pixelsize=12' -nb '#34495e' -nf '#ecf0f1' -sb '#ecf0f1' -sf '#34495e'
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -171,17 +172,18 @@ client.urgent               #bf616a #bf616a #ee0000 #bf616a
 bar {
 
     colors {
-        background #343d46
-        statusline #eff1f5
-        separator #f7ca18
-        focused_workspace #a3be8c #65737e #eff1f5
-        active_workspace #4f5b66 #5f676a #eff1f5
-        inactive_workspace #4f5b66 #4f5b66 #a7adba
+        background #22313f
+        statusline #ecf0f1
+        separator #446cb3
+        focused_workspace #2ecc71 #34495e #ecf0f1
+        active_workspace #2c3e50 #6c7aa89 #ecf0f1
+        inactive_workspace #bdc3c7 #bdc3c7 #34495e
         urgent_workspace #bf616a #65737e #eff1f5
     }
 
     # i3bar position
     position top
+
     # Using custom i3status.conf
     status_command i3status -c ~/.i3/i3status.conf
 }
@@ -198,7 +200,3 @@ exec xinput --set-prop "12" "libinput Accel Speed" 1
 # Trackpad point speet and scrolling
 exec xinput --set-prop "13" "libinput Accel Speed" 1
 exec xinput --set-prop 12 "libinput Natural Scrolling Enabled" 1
-
-# Gnome settings
-exec ssh-agent -s
-exec gnome-keyring-daemon --start --components=secrets,ssh
