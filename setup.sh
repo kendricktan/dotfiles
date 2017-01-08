@@ -19,5 +19,8 @@ cp xbindkeys/xbindkeysrc ~/.xbindkeysrc
 sudo cp scripts/brightness_ctrl.sh /usr/bin/brightness_ctrl.sh
 sudo chmod +x /usr/bin/brightness_ctrl.sh
 
+# udev rules for trackpoint
+sudo cp udev/99_trackpoint.rules /etc/udev/rules.d/99_trackpoint.rules
+
 # shell
 cp zsh/zshrc ~/.zshrc

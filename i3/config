@@ -194,9 +194,10 @@ exec feh --bg-scale ~/Pictures/Wallpapers/biscat.jpg
 # Media keys
 exec xbindkeys
 
-# Trackpoint speed
+# Trackpad speed
 exec xinput --set-prop "12" "libinput Accel Speed" 1
+exec xinput --set-prop "12" "libinput Natural Scrolling Enabled" 1
 
 # Trackpad point speet and scrolling
-exec xinput --set-prop "13" "libinput Accel Speed" 1
-exec xinput --set-prop 12 "libinput Natural Scrolling Enabled" 1
+ibm_trackpad_id=$(xinput | grep 'TPPS' | cut -d"=" -f2 | cut -f1)
+exec xinput --set-prop "$ibm_trackpad_id" "libinput Accel Speed" 1
