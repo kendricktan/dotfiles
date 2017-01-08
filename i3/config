@@ -175,8 +175,8 @@ bar {
         background #22313f
         statusline #ecf0f1
         separator #446cb3
-        focused_workspace #2ecc71 #34495e #ecf0f1
-        active_workspace #2c3e50 #6c7aa89 #ecf0f1
+        active_workspace #2ecc71 #34495e #ecf0f1
+        focused_workspace #2c3e50 #6c7aa89 #ecf0f1
         inactive_workspace #bdc3c7 #bdc3c7 #34495e
         urgent_workspace #bf616a #65737e #eff1f5
     }
