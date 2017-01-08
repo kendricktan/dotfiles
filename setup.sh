@@ -9,11 +9,15 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 mkdir -p ~/.i3/
 cp i3/* ~/.i3/
 
-# vim plugins + YouCompleteMe
+# vim plugins 
 cp vim/vimrc ~/.vimrc
 
-# bindkeys - volume, brightness etc
+# bindkeys - volume, brightness, screenshot etc
+mkdir -p ~/Pictures/prtsc
 cp xbindkeys/xbindkeysrc ~/.xbindkeysrc
+
+sudo cp scripts/brightness_ctrl.sh /usr/bin/brightness_ctrl.sh
+sudo chmod +x /usr/bin/brightness_ctrl.sh
 
 # shell
 cp zsh/zshrc ~/.zshrc
