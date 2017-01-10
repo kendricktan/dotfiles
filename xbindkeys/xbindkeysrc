@@ -62,7 +62,7 @@
   m:0x0 + c:233
 
 # Take screenshot
-"scrot -e 'mv $f /home/kendricktan/Pictures/prtsc/'"
+"gnome-screenshot -a -c"
   m:0x4 + c:107
 
 #"xterm -geom 50x20+20+20"

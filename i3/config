@@ -191,13 +191,17 @@ bar {
 # Wallpaper
 exec feh --bg-scale ~/Pictures/Wallpapers/biscat.jpg
 
+# SSH
+exec --no-startup-id gnome-settings-daemon
+
 # Media keys
 exec xbindkeys
 
-# Trackpad speed
-exec xinput --set-prop "12" "libinput Accel Speed" 1
-exec xinput --set-prop "12" "libinput Natural Scrolling Enabled" 1
+# Trackpoint speed
+set $ibm_trackpad_id $(xinput | grep 'SynPS' | cut -d"=" -f2 | cut -f1)
+exec xinput --set-prop $ibm_trackpad_id "libinput Accel Speed" 1
+exec xinput --set-prop $ibm_trackpad_id "libinput Natural Scrolling Enabled" 1
 
-# Trackpad point speet and scrolling
-ibm_trackpad_id=$(xinput | grep 'TPPS' | cut -d"=" -f2 | cut -f1)
-exec xinput --set-prop "$ibm_trackpad_id" "libinput Accel Speed" 1
+# Trackpad point speed and scrolling
+set $ibm_trackpoint_id $(xinput | grep 'TPPS' | cut -d"=" -f2 | cut -f1)
+exec xinput --set-prop $ibm_trackpoint_id "libinput Accel Speed" 1
