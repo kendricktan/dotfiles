@@ -61,9 +61,23 @@
 "./usr/bin/brightness_ctrl.sh +5"
   m:0x0 + c:233
 
+# In case I fucked up brightness
+"xrandr --output eDP-1-1 --brightness 1"
+  m:0x0 + c:152
+  XF86Explorer
+
+"xrandr --output eDP-1-1 --brightness 0"
+  m:0x0 + c:128
+  XF86LaunchA
+
 # Take screenshot
-"gnome-screenshot -a -c"
+"gnome-screenshot -a"
+  m:0x0 + c:107
+  Print
+
+"gnome-screenshot -c -a"
   m:0x4 + c:107
+  Control + Print
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
