@@ -42,8 +42,13 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
+Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+Plug 'garbas/vim-snipmate'
+Plug 'Shougo/neocomplete.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
 
 let g:make = 'gmake'
 if exists('make')
@@ -72,6 +77,8 @@ Plug 'tomasr/molokai'
 Plug 'arcticicestudio/nord-vim'
 Plug 'raphamorim/lucario'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'LightAndLight/gruvbox'
+Plug 'dracula/vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -83,8 +90,8 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 
 " haskell
 "" Haskell Bundle
+Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
-Plug 'dag/vim2hs'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 
 
@@ -161,18 +168,21 @@ let g:session_command_aliases = 1
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-let base16colorspace=256 " Access colors present in 256 colorspace
+set t_Co=256
+set background=dark
+set t_AB=^[[48;5;%dm
+set t_AF=^[[38;5;%dm]]]]
 set cursorline
 set ruler
 set number
+syntax enable
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme lucario
+  colorscheme gruvbox
 endif
 
 " very light grey highlight
-syntax on
 hi CursorLine cterm=NONE ctermbg=52 ctermfg=NONE
 
 set mousemodel=popup
@@ -465,8 +475,6 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
 
 " haskell
-let g:haskell_conceal_wide = 1
-let g:haskell_multiline_strings = 1
 let g:necoghc_enable_detailed_browse = 1
 autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
 
@@ -512,6 +520,9 @@ let g:airline#extensions#virtualenv#enabled = 1
 let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
+
+" No folding
+set nofoldenable
 
 "*****************************************************************************
 "*****************************************************************************
