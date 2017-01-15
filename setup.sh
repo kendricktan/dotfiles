@@ -32,3 +32,7 @@ cabal update
 cabal install ghc-mod
 stack update
 stack upgrade
+
+# Setup wallpaper
+mkdir -p ~/Pictures/Wallpapers
+curl -o ~/Pictures/Wallpapers/biscat.jpg http://i.imgur.com/AdBOtzJ.jpg 
