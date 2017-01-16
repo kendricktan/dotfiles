@@ -168,14 +168,21 @@ let g:session_command_aliases = 1
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
+set cursorline      " highlight currently selected line
+set ruler           " show cursor position
+set number          " show line numbers
+set relativenumber  " show line numbers relative to currently selected line
+set smartindent     " smart indent
+set showcmd         " display incomplete commands
+set incsearch       " no need to hit enter
+set hlsearch        " highlight search matches
+set splitbelow      " natural horizontal splitting
+set splitright      " natural vertical splitting
+syntax enable
+
+" Settings to enable 256 color mode
 set t_Co=256
 set background=dark
-set t_AB=^[[48;5;%dm
-set t_AF=^[[38;5;%dm]]]]
-set cursorline
-set ruler
-set number
-syntax enable
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
