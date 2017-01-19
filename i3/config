@@ -39,9 +39,13 @@ bindsym $mod+Return exec terminology
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -p 'run: ' -fn 'hack:normal:pixelsize=12' -nb '#34495e' -nf '#ecf0f1' -sb '#ecf0f1' -sf '#34495e'
+# start dmenu 
+bindsym $mod+Shift+p exec dmenu_run -p 'run: ' -fn 'hack:normal:pixelsize=12' -nb '#34495e' -nf '#ecf0f1' -sb '#ecf0f1' -sf '#34495e'
 
+# rofi
+bindsym $mod+d exec --no-startup-id rofi -show run 
+bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -dmenu -p run: -i"
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -169,12 +173,12 @@ client.urgent               #bf616a #bf616a #ee0000 #bf616a
 bar {
 
     colors {
-        background #22313f
-        statusline #ecf0f1
+        background #343d46
+        statusline #eff1f5
         separator #446cb3
-        active_workspace #2ecc71 #34495e #ecf0f1
-        focused_workspace #2c3e50 #6c7aa89 #ecf0f1
-        inactive_workspace #bdc3c7 #bdc3c7 #34495e
+        focused_workspace #a3be8c #65737e #eff1f5
+        active_workspace #4f5b66 #5f676a #eff1f5
+        inactive_workspace #4f5b66 #4f5b66 #a7adba
         urgent_workspace #bf616a #65737e #eff1f5
     }
 
