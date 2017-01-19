@@ -465,7 +465,7 @@ endif
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
-oremap <leader>q :bp<CR>
+noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 

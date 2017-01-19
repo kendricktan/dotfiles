@@ -92,12 +92,13 @@ mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Cuda
-export CUDA_HOME=/usr/local/cuda/
+export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64
 export PATH=${CUDA_HOME}/bin:${PATH}
 
 # Haskell
-export PATH=~/.cabal/bin:${PATH}
+export PATH=~/.local/bin/:${PATH}
+export PATH=~/.stack/programs/x86_64-linux/:${PATH}
 
 # SSH
 source ~/.i3/start_gnome_ssh_keyring.sh
