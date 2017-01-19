@@ -150,6 +150,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set smartindent
+set smarttab
 
 "" Directories for swp files
 set nobackup
@@ -172,10 +174,7 @@ set cursorline      " highlight currently selected line
 set ruler           " show cursor position
 set number          " show line numbers
 set relativenumber  " show line numbers relative to currently selected line
-set smartindent     " smart indent
-set showcmd         " display incomplete commands
-set incsearch       " no need to hit enter
-set hlsearch        " highlight search matches
+set autoindent      " auto indent
 set splitbelow      " natural horizontal splitting
 set splitright      " natural vertical splitting
 syntax enable
@@ -381,6 +380,14 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "" Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+if has("gui_running")
+    imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+    if has("unix")
+        inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+    endif
+endif
+
 "" ctrlp.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
@@ -410,6 +417,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " syntastic
+map <Leader>s :SyntasticToggleMode<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -417,6 +430,13 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+
+" Tabular
+let g:haskell_tabular = 1
+
+vmap a= :Tab /=<CR>
+vmap a; :Tab /::<CR>
+vmap a- :Tab /-><CR>
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -445,7 +465,7 @@ endif
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
+oremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 
@@ -480,11 +500,15 @@ nnoremap <Leader>o :.Gbrowse<CR>
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
-
 " haskell
 let g:necoghc_enable_detailed_browse = 1
+let g:haskellmode_completion_ghc = 0
 autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
 
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
@@ -526,7 +550,6 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
-
 
 " No folding
 set nofoldenable

@@ -4,6 +4,9 @@ sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# profile
+cp profile/profile ~/.profile
+
 # i3
 mkdir -p ~/.i3/
 cp i3/* ~/.i3/
@@ -30,10 +33,10 @@ sudo pip3 install virtualenvwrapper virtualenv
 
 # Haskell
 curl -sSL https://get.haskellstack.org/ | sh # Stack
-cabal update
-cabal install ghc-mod
 stack update
 stack upgrade
+stack setup
+stack install ghc-mod
 
 # Setup wallpaper
 mkdir -p ~/Pictures/Wallpapers
