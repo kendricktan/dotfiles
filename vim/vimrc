@@ -105,7 +105,6 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'davidhalter/jedi-vim'
 Plug 'tell-k/vim-autopep8'
 
-autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 "*****************************************************************************
 "*****************************************************************************
@@ -321,6 +320,9 @@ augroup vimrc-sync-fromstart
   autocmd BufEnter * :syntax sync fromstart
 augroup END
 
+"" Python
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
   autocmd!
@@ -493,6 +495,10 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+"" Unhighlight
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "*****************************************************************************
 "" Custom configs
