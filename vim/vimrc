@@ -412,6 +412,7 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
 
 " Tabular
 let g:haskell_tabular = 1
