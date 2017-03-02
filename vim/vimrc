@@ -103,7 +103,9 @@ Plug 'jelera/vim-javascript-syntax'
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
+Plug 'tell-k/vim-autopep8'
 
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 "*****************************************************************************
 "*****************************************************************************
@@ -189,7 +191,7 @@ if !exists('g:not_finish_vimplug')
 endif
 
 " very light grey highlight
-hi CursorLine cterm=NONE ctermbg=52 ctermfg=NONE
+hi CursorLine cterm=NONE ctermbg=52 ctermfg=NONE "Dark red (For dark scheme)
 
 set mousemodel=popup
 set guioptions=egmrti
@@ -378,7 +380,7 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-n><c-x><c-o>"
 
 if has("gui_running")
     imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
