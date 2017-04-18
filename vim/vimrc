@@ -93,6 +93,7 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'itchyny/vim-haskell-indent'
 
 
 " javascript
@@ -241,6 +242,7 @@ set modelines=10
 set title
 set titleold="Terminal"
 set titlestring=%F
+set pastetoggle=<F10>
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
@@ -412,7 +414,7 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
+let g:syntastic_python_flake8_post_args='--ignore=F401,E501,E128,E225,E731,E402'
 
 " Tabular
 let g:haskell_tabular = 1
@@ -420,6 +422,7 @@ let g:haskell_tabular = 1
 vmap a= :Tab /=<CR>
 vmap a; :Tab /::<CR>
 vmap a- :Tab /-><CR>
+vmap a$ :Tab /$><CR>
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -478,6 +481,11 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Unhighlight
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+"" Scroll through time instead of space
+"" set mouse=a
+"" nnoremap <ScrollWheelUp> g-
+"" nnoremap <ScrollWheelDown> g+
 
 "*****************************************************************************
 "" Custom configs

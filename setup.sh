@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf terminology screenfetch scrot feh cmake build-essential python-dev python3-dev vim-python-jedi python3-pip haskell-platform rofi zathura
+sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf terminology screenfetch scrot feh cmake build-essential python-dev python3-dev vim-python-jedi python3-pip haskell-platform rofi zathura xclip perl rxvt-unicode
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -10,6 +10,9 @@ cp profile/profile ~/.profile
 # i3
 mkdir -p ~/.i3/
 cp i3/* ~/.i3/
+
+# Xresources
+cp Xresources/Xresources ~/.Xresources
 
 # vim settings
 cp vim/vimrc ~/.vimrc
@@ -27,6 +30,9 @@ sudo cp udev/99_trackpoint.rules /etc/udev/rules.d/99_trackpoint.rules
 # shell
 cp zsh/zshrc ~/.zshrc
 source ~/.zshrc
+
+# copy + paste for rxvt-unicode
+sudo cp clipboard/clipboard /usr/lib/urxvt/perl/
 
 # Python
 sudo pip3 install virtualenvwrapper virtualenv

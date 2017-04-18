@@ -34,7 +34,7 @@ font pango:hack 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminology 
+bindsym $mod+Return exec rxvt-unicode
 
 # kill focused window
 bindsym $mod+Shift+q kill
