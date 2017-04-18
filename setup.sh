@@ -31,8 +31,9 @@ sudo cp udev/99_trackpoint.rules /etc/udev/rules.d/99_trackpoint.rules
 cp zsh/zshrc ~/.zshrc
 source ~/.zshrc
 
+# Font decrease increase and
 # copy + paste for rxvt-unicode
-sudo cp clipboard/clipboard /usr/lib/urxvt/perl/
+sudo cp ./perl-lib/* /usr/lib/urxvt/perl/
 
 # Python
 sudo pip3 install virtualenvwrapper virtualenv

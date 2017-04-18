@@ -1,14 +1,9 @@
 ! URXVT GENERAL CONFIG
 !------------------------------------------------
-URxvt*iconFile: /usr/share/icons/Faenza/apps/32/utilities-terminal.png
-IRC*iconFile: /usr/share/icons/Faenza/apps/32/xchat.png
-URxvt.geometry: 80x22
-! URXVT FONTS
-!------------------------------------------------
 URxvt.font:xft:Hack:pixelsize=12
-URxvt.boldFont:xft:Hack:bold:pixelsize=14
-URxvt.italicfont:xft:Hack:italic:pixelsize=14
-URxvt.bolditalicFont:xft:Hack:bold:italic:pixelsize=14
+URxvt.boldFont:xft:Hack:bold:pixelsize=12
+URxvt.italicfont:xft:Hack:italic:pixelsize=12
+URxvt.bolditalicFont:xft:Hack:bold:italic:pixelsize=12
 URxvt*letterSpace: 0
 URxvt*allow_bold: true
 ! URXVT FONT SETTINGS
@@ -21,14 +16,12 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 ! URXVT ENABLE LINK SUPPORT
 !------------------------------------------------
-URxvt.perl-lib: /home/luca/Documenti/perl/
-URxvt.perl-ext-common: default,matcher,clipboard
-!tabbed
-URxvt.matcher.button: 1
-URxvt.perl-ext: default
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/firefox
-URxvt.url-select.underline: true
+URxvt.perl-lib: /usr/lib/urxvt/perl
+URxvt.perl-ext-common: default,matcher,clipboard,resize-font
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
 !disable the fucking bell
 URxvt.insecure: false
 ! URXVT COPY PASTE SHORTCUTS
@@ -46,8 +39,7 @@ URxvt*saveLines: 300000
 URxvt.scrollBar: false
 !URxvt*scrollstyle: plain
 URxvt*cursorBlink: true
-URxvt*cursorUnderline: true
-
+URxvt*cursorUnderline: false
 ! URXVT TABS
 !------------------------------------------------
 URxvt.tabbedex.autohide: yes
