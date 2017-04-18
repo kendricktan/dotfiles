@@ -17,13 +17,6 @@ cp Xresources/Xresources ~/.Xresources
 # vim settings
 cp vim/vimrc ~/.vimrc
 
-# bindkeys - volume, brightness, screenshot etc
-mkdir -p ~/Pictures/prtsc
-cp xbindkeys/xbindkeysrc ~/.xbindkeysrc
-
-sudo cp scripts/brightness_ctrl.sh /usr/bin/brightness_ctrl.sh
-sudo chmod +x /usr/bin/brightness_ctrl.sh
-
 # udev rules for trackpoint
 sudo cp udev/99_trackpoint.rules /etc/udev/rules.d/99_trackpoint.rules
 
@@ -48,3 +41,15 @@ stack install ghc-mod
 # Setup wallpaper
 mkdir -p ~/Pictures/Wallpapers
 curl -o ~/Pictures/Wallpapers/biscat.jpg http://i.imgur.com/AdBOtzJ.jpg 
+
+# bindkeys - volume, brightness, screenshot etc
+mkdir -p ~/Pictures/prtsc
+cp xbindkeys/xbindkeysrc ~/.xbindkeysrc
+
+sudo cp scripts/brightness_ctrl.sh /usr/bin/brightness_ctrl.sh
+sudo chmod root:root /usr/bin/brightness_ctrl.sh
+sudo chmod u+rwx /usr/bin/brightness_ctrl.sh
+sudo chmod go-w+rx /usr/bin/brightness_ctrl.sh
+sudo echo "=====> Please append below line to your /etc/sudoers for brightness to work"
+sudo echo "$USER ALL=(root) NOPASSWD: /usr/bin/brightness_ctrl.sh"
+

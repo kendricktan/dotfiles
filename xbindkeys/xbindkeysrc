@@ -55,10 +55,10 @@
 
 # Brightness control
 
-"./usr/bin/brightness_ctrl.sh -5"
+"sudo brightness_ctrl.sh -5"
   m:0x0 + c:232
 
-"./usr/bin/brightness_ctrl.sh +5"
+"sudo brightness_ctrl.sh +5"
   m:0x0 + c:233
 
 # In case I fucked up brightness
