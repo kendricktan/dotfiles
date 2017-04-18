@@ -102,3 +102,13 @@ export PATH=~/.stack/programs/x86_64-linux/:${PATH}
 
 # SSH
 source ~/.i3/start_gnome_ssh_keyring.sh
+
+# Conda
+export PATH=/home/kendricktan/.miniconda3/bin:$PATH
+
+# rxvt-unicode
+xrdb -merge $HOME/.Xresources
+
+# ctrl + arrow
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
