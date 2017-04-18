@@ -22,5 +22,5 @@ new_brightness_p=$(($old_brightness_p $1))
 new_brightness=$(( $max_brightness * $new_brightness_p / 100 ))
 
 # set the new brightness value
-sudo chmod 666 $handler"brightness"
+# sudo chmod 666 $handler"brightness"
 echo $new_brightness > $handler"brightness"
