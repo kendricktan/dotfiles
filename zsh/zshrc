@@ -112,3 +112,18 @@ xrdb -merge $HOME/.Xresources
 # ctrl + arrow
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source ~/.rvm/scripts/rvm
+
+# Add PythonPath for Caffe2
+export PYTHONPATH=~/.caffe2/build
+
+# Docker killall
+alias stopalldocker="docker stop $(docker ps -a -q)"
+alias rmalldocker="docker rm $(docker ps -a -q)"
+alias rmialldocker="docker rmi $(docker ps -a -q)"
+
+# Z
+. $HOME/.i3/z.sh
