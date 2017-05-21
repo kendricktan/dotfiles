@@ -4,9 +4,6 @@ sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# profile
-cp profile/profile ~/.profile
-
 # i3
 mkdir -p ~/.i3/
 cp i3/* ~/.i3/
