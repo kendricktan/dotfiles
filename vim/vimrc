@@ -482,6 +482,11 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+"" Caps lock as escape
+"
+au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
 "" Scroll through time instead of space
 "" set mouse=a
 "" nnoremap <ScrollWheelUp> g-
