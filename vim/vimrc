@@ -49,6 +49,8 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/vimproc.vim'
+Plug 'cjrh/vim-conda'
 
 let g:make = 'gmake'
 if exists('make')
@@ -94,6 +96,7 @@ Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'itchyny/vim-haskell-indent'
+Plug 'Chiel92/vim-autoformat'
 
 
 " javascript
@@ -353,6 +356,10 @@ set autoread
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
+"" Conda env
+map <F6> :CondaChangeEnv<CR>
+let g:conda_startup_msg_suppress = 1
+
 "" Git
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
@@ -419,11 +426,6 @@ let g:syntastic_python_flake8_post_args='--ignore=F401,E501,E128,E225,E731,E402'
 " Tabular
 let g:haskell_tabular = 1
 
-vmap a= :Tab /=<CR>
-vmap a; :Tab /::<CR>
-vmap a- :Tab /-><CR>
-vmap a$ :Tab /$><CR>
-
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -484,8 +486,8 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "" Caps lock as escape
 "
-au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+"" au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+"" au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
 "" Scroll through time instead of space
 "" set mouse=a
@@ -504,6 +506,11 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 let g:necoghc_enable_detailed_browse = 1
 let g:haskellmode_completion_ghc = 0
 autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+
+vmap a= :Tab /=<CR>
+vmap a; :Tab /::<CR>
+vmap a- :Tab /-><CR>
+vmap a$ :Tab /$><CR>
 
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
@@ -528,6 +535,10 @@ augroup vimrc-python
       \ formatoptions+=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
+
+" autocomplete
+let g:formatterpath = ["/home/kendrick/.local/bin/stylish-haskell", "/home/kendrick/.miniconda/bin/autopep8"]
+noremap <F5> :Autoformat<CR>
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0

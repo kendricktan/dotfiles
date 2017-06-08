@@ -184,13 +184,25 @@ bar {
 }
 
 # Wallpaper
-exec feh --bg-scale ~/Pictures/Wallpapers/biscat.jpg
+exec --no-startup-id feh --bg-center ~/Pictures/Wallpapers/biscat.jpg
 
-# SSH
-exec --no-startup-id gnome-settings-daemon
+# Xmodmap
+exec xmodmap $HOME/.xmodmap
+exec xmodmap -e "clear Lock"
+
+# Mega
+exec --no-startup-id megasync
 
 # Media keys
-exec xbindkeys
+exec --no-startup-id xbindkeys
+
+# Natural scroll
+exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
+
+# Palm detection
+set $touchpad_id $(xinput | grep 'TouchPad' | cut -d"=" -f2 | cut -f1)
+exec xinput --set-prop $touchpad_id "Synaptics Palm Detection" 1
+exec xinput --set-prop $touchpad_id "Synaptics Palm Dimensions" 15, 15
 
 # Trackpoint speed
 set $ibm_trackpad_id $(xinput | grep 'SynPS' | cut -d"=" -f2 | cut -f1)
