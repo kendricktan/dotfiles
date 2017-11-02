@@ -184,7 +184,7 @@ bar {
 }
 
 # Wallpaper
-exec --no-startup-id feh --bg-center ~/Pictures/Wallpapers/biscat.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/magpie.png
 
 # Xmodmap
 exec xmodmap $HOME/.xmodmap
