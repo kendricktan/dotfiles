@@ -61,6 +61,14 @@
 "sudo brightness_ctrl.sh +5"
   m:0x0 + c:233
 
+# Redshift control
+
+"redshift -x"
+  m:0x0 + c:225
+
+"redshift -O 3500"
+  m:0x0 + c:179
+
 # In case I fucked up brightness
 "xrandr --output eDP-1-1 --brightness 1"
   m:0x0 + c:152

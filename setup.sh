@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf terminology screenfetch scrot feh cmake build-essential python-dev python3-dev vim-python-jedi python3-pip haskell-platform rofi zathura xclip perl rxvt-unicode-256color libpam0g-dev j4-dmenu-desktop
+sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf terminology screenfetch scrot feh cmake build-essential python-dev python3-dev vim-python-jedi python3-pip haskell-platform rofi zathura xclip perl rxvt-unicode-256color libpam0g-dev j4-dmenu-desktop redshift
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -34,7 +34,7 @@ stack install ghc-mod
 
 # Setup wallpaper
 mkdir -p ~/Pictures/Wallpapers
-curl -o ~/Pictures/Wallpapers/background002.jpg https://i.imgur.com/EVVRJtv.png
+curl -o ~/Pictures/Wallpapers/background007.jpg https://i.imgur.com/EVVRJtv.png
 
 # bindkeys - volume, brightness, screenshot etc
 mkdir -p ~/Pictures/prtsc

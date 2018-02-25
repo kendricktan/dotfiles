@@ -94,7 +94,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # lock screen (ctrl + alt + l)
-bindsym Control+mod1+l exec "~/.config/i3/lock_screen.sh"
+bindsym Control+mod1+l exec "~/.i3/lock_screen.sh"
 
 # switch to workspace
 set $ws1 1: www
@@ -168,7 +168,8 @@ bar {
     position top
 
     # Using custom i3status.conf
-    status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3status -c ~/.i3/i3status.conf
+    separator_symbol "/"
 
     colors {
         separator #969896
@@ -182,7 +183,7 @@ bar {
 }
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/background002.jpg
+exec --no-startup-id feh --bg-center ~/Pictures/Wallpapers/background007.jpg
 
 # Xmodmap
 exec xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
