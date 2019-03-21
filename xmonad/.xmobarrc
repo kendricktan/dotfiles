@@ -1,0 +1,34 @@
+Config { font = "xft:Ubuntu Mono-9",
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 95
+       , overrideRedirect = True
+       , commands = [ Run Weather "YBBN" [
+                        "-t", "<tempC>C", "-L", "18",
+		        "-H", "35",
+		        "--normal", "green",
+		        "--high", "red",
+		        "--low", "lightblue"
+		      ] 36000
+                    , Run Network "enp0s31f6" ["-L", "0", "-H", "32", "--normal", "green", "--high", "red"] 10
+                    , Run Network "wlp4s0" ["-L", "0",  "-H",  "32",  "--normal", "green", "--high", "red"] 10
+                    , Run Cpu ["-L", "3", "-H", "50", "--normal", "green", "--high", "red"] 10
+                    , Run Memory ["-t", "Mem: <usedratio>%"] 10
+                    , Run Com "uname" ["-s", "-r"] "" 36000
+                    , Run Date "%a %d %B %Y %H:%M:%S" "date" 10
+		    , Run BatteryP ["BAT0", "BAT1"]
+		      ["-t", "Bat: <acstatus><watts> (<left>%) - <timeleft>",
+		       "-L", "10", "-H", "80", "-p", "3",
+		       "--", "-O", "<fc=green>On</fc> - ", "-i", "",
+		       "-L", "-15", "-H", "-5",
+		       "-l", "red", "-m", "blue", "-h", "green"]
+		      10
+		    , Run Volume "default" "Master" ["-t", "Vol: <volume>% <status>", "--", "-on", "x"] 1
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %enp0s31f6% - %wlp4s0% | %cpu% | %memory% | %battery% | %default:Master% | <fc=#ee9a00>%date%</fc> | %YBBN% | "
+       }

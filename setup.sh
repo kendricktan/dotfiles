@@ -1,49 +1,27 @@
 #!/bin/bash
-sudo apt-get install zsh curl i3 xbindkeys xbacklight git vim vlc fonts-hack-ttf terminology screenfetch scrot feh cmake build-essential python-dev python3-dev vim-python-jedi python3-pip haskell-platform rofi zathura xclip perl rxvt-unicode-256color libpam0g-dev j4-dmenu-desktop redshift
+
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y \
+    xmonad xmobar xbacklight
+    git neovim curl thunar
+    vlc termite zsh feh keepass2
 
 # zsh
+cp zsh/zshrc $HOME/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# i3
-mkdir -p ~/.i3/
-cp i3/* ~/.i3/
+# XMonad
+mkdir -p $HOME/.xmonad
+cp xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 
-# Xresources
-cp Xresources/Xresources ~/.Xresources
+# XMobar
+cp xmonad/.xmobarrc $HOME/.xmobarrc
 
-# vim settings
-cp vim/vimrc ~/.vimrc
+# z - Jump Around
+wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O $HOME/.z.sh
+chmod +x $HOME/.z.sh
 
-# udev rules for trackpoint
-sudo cp udev/99_trackpoint.rules /etc/udev/rules.d/99_trackpoint.rules
-
-# shell
-cp zsh/zshrc ~/.zshrc
-source ~/.zshrc
-
-# Font decrease increase and
-# copy + paste for rxvt-unicode
-sudo cp ./perl-lib/* /usr/lib/urxvt/perl/
-
-# Haskell
-curl -sSL https://get.haskellstack.org/ | sh # Stack
-stack update
-stack upgrade
-stack setup
-stack install ghc-mod
-
-# Setup wallpaper
-mkdir -p ~/Pictures/Wallpapers
-curl -o ~/Pictures/Wallpapers/background007.jpg https://i.imgur.com/EVVRJtv.png
-
-# bindkeys - volume, brightness, screenshot etc
-mkdir -p ~/Pictures/prtsc
-cp xbindkeys/xbindkeysrc ~/.xbindkeysrc
-
-sudo cp scripts/brightness_ctrl.sh /usr/bin/brightness_ctrl.sh
-sudo chmod root:root /usr/bin/brightness_ctrl.sh
-sudo chmod u+rwx /usr/bin/brightness_ctrl.sh
-sudo chmod go-w+rx /usr/bin/brightness_ctrl.sh
-echo "=====> Please append below line to your /etc/sudoers for brightness to work"
-echo $USER "ALL=(root) NOPASSWD: /usr/bin/brightness_ctrl.sh"
-
+# Wallpaper
+mkdir -p $HOME/Pictures/Background
+wget https://i.imgur.com/c6lgoWv.jpg -O $HOME/Pictures/Background/background.jpg
